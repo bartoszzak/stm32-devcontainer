@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceRoot}/build/", // fill the .elf path
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "device": "",  // fill this (e.g. STM32F407VG)
+            "interface": "swd",
+            "configFiles": [
+                "/usr/share/openocd/scripts/interface/stlink.cfg",
+                "/usr/share/openocd/scripts/target/" // fill this (e.g. stm32f4x.cfg)
+            ],
+            "svdFile": "/usr/share/openocd/scripts/target/", // fill this (e.g. STM32F407.svd)
+            "armToolchainPath": "/opt/gcc-arm-none-eabi/bin"
+        }
+    ]
+}
